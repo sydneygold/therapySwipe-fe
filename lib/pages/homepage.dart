@@ -1,13 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:therapyswipe_fe/widgets/cardholder.dart';
+import 'package:therapyswipe_fe/widgets/cardheader.dart';
 
 class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[100],
+      backgroundColor: Colors.lightBlue[100],
       appBar: AppBar(
         title: Text(
           'Therapy Swipe', 
@@ -16,18 +17,29 @@ class MyHomePage extends StatelessWidget {
             fontSize: 28.0,
           ),
         ),
-        backgroundColor: Colors.teal[300],
+        backgroundColor: Colors.lightBlue[900],
         toolbarHeight: 70.0,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CardContainer(),
-        ],
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/raindrops.jpg'),
+              fit: BoxFit.cover,
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CardContainer(),
+            ],
+          ),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.blue[900],
         unselectedItemColor: Colors.white,
         selectedItemColor: Colors.white,
         items: [
